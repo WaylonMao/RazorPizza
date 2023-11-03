@@ -1,11 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RazorPizza.Pages.Checkout;
-
-public class Checkout : PageModel
+namespace RazorPizza.Pages.Checkout
 {
-    public void OnGet()
+    [BindProperties(SupportsGet = true)]
+    public class Checkout : PageModel
     {
-        
+        public string? PizzaName { get; set; }
+        public float PizzaPrice { get; set; }
+        public string? ImageTitle { get; set; }
+
+        public void OnGet()
+        {
+            if (string.IsNullOrWhiteSpace(PizzaName))
+            {
+                PizzaName = "Custom Pizza";
+            } 
+            if (string.IsNullOrWhiteSpace(ImageTitle))
+            {
+                ImageTitle = "Create";
+            }
+        } 
     }
 }

@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RazorPizza.Pages.Checkout;
-
-public class ThankYou : PageModel
+namespace RazorPizza.Pages.Checkout
 {
-    public void OnGet()
+    public class ThankYou : PageModel
     {
-        
+        public void OnGet()
+        {
+
+        }
     }
 }
