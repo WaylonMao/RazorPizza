@@ -17,14 +17,15 @@ public class CustomPizza : PageModel
     {
         if (Pizza == null) return BadRequest("Pizza is null");
         PizzaPrice = Pizza.BasePrice;
-        if (Pizza.TomatoSauce) PizzaPrice += 1f;
-        if (Pizza.Cheese) PizzaPrice += 2f;
-        if (Pizza.Pepperoni) PizzaPrice += 1f;
-        if (Pizza.Mushrooms) PizzaPrice += 1f;
-        if (Pizza.Tuna) PizzaPrice += 1f;
-        if (Pizza.Pineapple) PizzaPrice += 1f;
-        if (Pizza.Ham) PizzaPrice += 2f;
-        if (Pizza.Beef) PizzaPrice += 4f;
+        if (Pizza.TomatoSauce) PizzaPrice += 1;
+        if (Pizza.Cheese) PizzaPrice += 1;
+        if (Pizza.Pepperoni) PizzaPrice += 1;
+        if (Pizza.Mushroom) PizzaPrice += 1;
+        if (Pizza.Tuna) PizzaPrice += 1;
+        if (Pizza.Pineapple) PizzaPrice += 10;
+        if (Pizza.Ham) PizzaPrice += 1;
+        if (Pizza.Beef) PizzaPrice += 1;
+
 
         return RedirectToPage("/Checkout/Checkout", new { Pizza.PizzaName, PizzaPrice });
     }
